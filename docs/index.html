@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech Solutions</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            background: rgba(0,0,0,0.6);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 12px 25px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* SECCIONS */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* SERVEIS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* SOBRE */
+        .sobre {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .sobre img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        /* CONTACTE */
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111827;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1>NovaTech</h1>
+        <ul>
+            <li><a href="#inici">Inici</a></li>
+            <li><a href="#serveis">Serveis</a></li>
+            <li><a href="#sobre">Sobre nosaltres</a></li>
+            <li><a href="#contacte">Contacte</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="inici" class="hero">
+    <div class="hero-content">
+        <h2>Impulsem el teu negoci digital</h2>
+        <p>Solucions modernes per destacar al món online</p>
+        <a href="#contacte" class="btn">Contacta amb nosaltres</a>
+    </div>
+</section>
+
+<!-- SERVEIS -->
+<section id="serveis">
+    <h2>Els nostres serveis</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d">
+            <h3>Disseny web</h3>
+            <p>Pàgines modernes, atractives i adaptades a tots els dispositius.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
+            <h3>Desenvolupament</h3>
+            <p>Aplicacions i webs a mida segons les teves necessitats.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+            <h3>SEO</h3>
+            <p>Millorem el posicionament de la teva web a Google.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+            <h3>Xarxes socials</h3>
+            <p>Gestió professional per fer créixer la teva marca.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+    <h2>Sobre nosaltres</h2>
+
+    <div class="sobre">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+
+        <div>
+            <p>Som un equip creatiu i apassionat per la tecnologia. Treballem amb empreses que volen fer el salt digital i destacar.</p>
+
+            <h3>Missió</h3>
+            <p>Fer créixer negocis amb tecnologia moderna.</p>
+
+            <h3>Valors</h3>
+            <ul>
+                <li>Innovació</li>
+                <li>Qualitat</li>
+                <li>Compromís</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTE -->
+<section id="contacte">
+    <h2>Contacte</h2>
+    <p>Parlem del teu projecte 👇</p>
+
+    <form>
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Correu electrònic" required>
+        <input type="tel" placeholder="Telèfon">
+        <textarea placeholder="Missatge" rows="5"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 NovaTech Solutions</p>
+</footer>
+
+</body>
+</html>
