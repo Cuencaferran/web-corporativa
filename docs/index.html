@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech Solutions</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            background: #1e2a38;
+            color: white;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: #e3ecf5;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .servei {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px;
+            background: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005fa3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e2a38;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1>NovaTech</h1>
+        <ul>
+            <li><a href="#inici">Inici</a></li>
+            <li><a href="#serveis">Serveis</a></li>
+            <li><a href="#sobre">Sobre nosaltres</a></li>
+            <li><a href="#contacte">Contacte</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="inici" class="hero">
+    <h2>Impulsem el teu negoci digital</h2>
+    <p>Solucions tecnològiques modernes per fer créixer la teva empresa.</p>
+    <p>Som una empresa especialitzada en desenvolupament web, màrqueting digital i solucions tecnològiques adaptades a cada client.</p>
+    <a href="#contacte" class="btn">Contacta amb nosaltres</a>
+</section>
+
+<section id="serveis">
+    <h2>Els nostres serveis</h2>
+
+    <div class="servei">
+        <h3>Disseny web</h3>
+        <p>Creem pàgines web modernes, responsives i adaptades a la identitat de la teva marca.</p>
+    </div>
+
+    <div class="servei">
+        <h3>Desenvolupament a mida</h3>
+        <p>Desenvolupem aplicacions i solucions digitals personalitzades segons les teves necessitats.</p>
+    </div>
+
+    <div class="servei">
+        <h3>SEO i posicionament</h3>
+        <p>Optimitzem la teva web per millorar la seva visibilitat als motors de cerca.</p>
+    </div>
+
+    <div class="servei">
+        <h3>Gestió de xarxes socials</h3>
+        <p>Creem i gestionem contingut per potenciar la teva presència online.</p>
+    </div>
+</section>
+
+<section id="sobre">
+    <h2>Sobre nosaltres</h2>
+    <p>Som un equip jove i dinàmic apassionat per la tecnologia i la innovació. A NovaTech treballem colze a colze amb els nostres clients per oferir solucions eficients i creatives.</p>
+
+    <h3>Missió</h3>
+    <p>Ajudar empreses a créixer mitjançant eines digitals innovadores i accessibles.</p>
+
+    <h3>Valors</h3>
+    <ul>
+        <li>Innovació constant</li>
+        <li>Compromís amb el client</li>
+        <li>Transparència</li>
+        <li>Qualitat en el servei</li>
+    </ul>
+</section>
+
+<section id="contacte">
+    <h2>Contacte</h2>
+    <p>Tens un projecte en ment? Estarem encantats d’ajudar-te. Omple el formulari i ens posarem en contacte amb tu.</p>
+
+    <form>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Correu electrònic</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefon">Telèfon de contacte</label>
+        <input type="tel" id="telefon" name="telefon">
+
+        <label for="missatge">Missatge</label>
+        <textarea id="missatge" name="missatge" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 NovaTech Solutions. Tots els drets reservats.</p>
+</footer>
+
+</body>
+</html>
