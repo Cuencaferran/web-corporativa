@@ -1,5 +1,3 @@
-
-
 # Web Corporativa de ferran cuenca
 
 Aquesta és la web corporativa de FoodLogístic , una empresa fictícia dedicada a # Projecte FoodLogistic S.A.
