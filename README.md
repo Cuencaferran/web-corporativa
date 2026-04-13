@@ -1,8 +1,9 @@
 # Web Corporativa de ferran cuenca
 
-Aquesta és la web corporativa de FoodLogístic , una empresa fictícia dedicada a # Projecte FoodLogistic S.A.
+🏗️ Qui som: FoodLogístic S.A.
+FoodLogístic S.A. és una empresa líder en el sector de la distribució i logística alimentària a nivell nacional. Amb la nostra seu central estratègicament ubicada a Mataró, som el nexe d'unió essencial entre els productors i el punt de venda final.
 
-Aquest projecte consisteix en la creació i desplegament d'una pàgina web corporativa per a l'empresa FoodLogistic S.A., amb l'objectiu de modernitzar la seva presència digital i complir amb la normativa vigent (LOPDGDD i LSSI-CE).
+Des de la nostra fundació, hem crescut de la mà dels nostres clients, adaptant-nos a un mercat exigent que requereix immediatesa, seguretat alimentària i una traçabilitat absoluta. Avui dia, gestionem una complexa xarxa de rutes logístiques que garanteixen que els aliments arribin a la seva destinació en condicions òptimes i en el temps record que el sector demanda.
 
 S'ha utilitzat GitHub Pages per a la publicació i StatCounter per al seguiment de visites. dins el mòdul *Projecte Intermodular*.
 
