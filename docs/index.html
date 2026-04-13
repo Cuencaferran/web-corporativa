@@ -3,289 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodLogistic | Enterprise Data Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>FoodLogistic | Data Core Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* --- DISSENY DE SISTEMA --- */
         :root {
-            --primary: #0ea5e9; /* Blau modern */
-            --primary-dark: #0284c7;
-            --bg-dark: #0f172a;
-            --surface: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --accent: #10b981; /* Verd per a èxit/legal */
-            --radius-lg: 16px;
-            --radius-md: 12px;
-            --shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg: #050505;
+            --surface: #111111;
+            --accent: #8b5cf6; /* Violeta elèctric */
+            --accent-glow: rgba(139, 92, 246, 0.3);
+            --text-high: #ffffff;
+            --text-low: #94a3b8;
+            --border: #222222;
+            --radius: 12px;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- BASE --- */
+        /* --- BASE & SCROLLBAR --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        
         body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            color: var(--text-main); 
-            background-color: #f1f5f9;
+            font-family: var(--font-main); 
+            background-color: var(--bg); 
+            color: var(--text-high); 
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓ GLASSMORFISME --- */
+        /* --- NAVIGATION --- */
         header {
-            position: fixed;
-            top: 0; width: 100%; height: 80px;
-            display: flex; align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
+            position: fixed; top: 0; width: 100%; height: 70px;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; align-items: center;
         }
 
         nav {
-            max-width: 1200px; margin: 0 auto; width: 90%;
+            max-width: 1400px; margin: 0 auto; width: 90%;
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; color: var(--bg-dark); }
-        .logo span { color: var(--primary); }
+        .logo { 
+            font-family: var(--font-mono); font-weight: 700; font-size: 1.2rem; 
+            letter-spacing: -1px; color: var(--text-high);
+        }
+        .logo span { color: var(--accent); }
 
-        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
         .nav-links a { 
-            text-decoration: none; color: var(--text-main); 
-            font-weight: 600; font-size: 0.95rem; 
-            transition: var(--transition);
+            text-decoration: none; color: var(--text-low); font-size: 0.85rem; 
+            text-transform: uppercase; letter-spacing: 1px; transition: var(--transition);
         }
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
 
-        /* --- HERO SECTION (ULTRA MODERNA) --- */
+        /* --- HERO: THE CORE --- */
         .hero {
-            padding: 160px 0 100px;
-            background: radial-gradient(circle at top right, #e0f2fe, transparent);
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at 50% -20%, #1e1b4b, transparent);
+            text-align: center;
         }
 
-        .hero-container {
-            max-width: 1200px; margin: 0 auto; width: 90%;
-            display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center;
+        .badge {
+            display: inline-block; padding: 6px 12px; background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent); color: var(--accent);
+            border-radius: 100px; font-size: 0.75rem; font-family: var(--font-mono); margin-bottom: 20px;
         }
 
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1; font-weight: 800; margin-bottom: 24px;
-            background: linear-gradient(to bottom right, var(--bg-dark), var(--primary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; line-height: 0.9;
+            letter-spacing: -3px; margin-bottom: 30px;
         }
 
-        .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; }
+        .hero p { color: var(--text-low); max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }
 
         .btn {
-            padding: 16px 32px; border-radius: var(--radius-md);
-            font-weight: 700; text-decoration: none; cursor: pointer;
-            transition: var(--transition); border: none; font-size: 1rem;
+            padding: 14px 28px; border-radius: 6px; font-weight: 600; 
+            text-decoration: none; cursor: pointer; transition: var(--transition);
+            display: inline-block; border: none; font-family: var(--font-mono);
+        }
+        .btn-main { background: var(--accent); color: white; box-shadow: 0 0 30px var(--accent-glow); }
+        .btn-main:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+        /* --- GRID SECTIONS --- */
+        .grid-container {
+            max-width: 1200px; margin: 50px auto; width: 90%;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
         }
 
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3); }
-        .btn-primary:hover { transform: translateY(-3px); background: var(--primary-dark); }
-
-        /* --- CARDS TÈCNIQUES --- */
-        .features { max-width: 1200px; margin: -50px auto 100px; width: 90%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card {
-            background: var(--surface); padding: 40px; border-radius: var(--radius-lg);
-            box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03);
-            transition: var(--transition);
+        .bento-card {
+            background: var(--surface); border: 1px solid var(--border);
+            padding: 40px; border-radius: var(--radius); transition: var(--transition);
         }
-        .card:hover { transform: translateY(-10px); }
-        .card h3 { margin: 20px 0 10px; color: var(--bg-dark); }
+        .bento-card:hover { border-color: var(--accent); background: #161616; }
+        .bento-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .bento-card p { color: var(--text-low); font-size: 0.95rem; }
 
-        /* --- FORMULARI PREMIUM (REQUISIT RÚBRICA) --- */
-        .contact-section { background: var(--bg-dark); color: white; padding: 100px 0; border-radius: 40px 40px 0 0; }
-        .form-container { max-width: 700px; margin: 0 auto; width: 90%; text-align: center; }
-        .contact-form { background: rgba(255,255,255,0.05); padding: 50px; border-radius: 24px; text-align: left; margin-top: 40px; border: 1px solid rgba(255,255,255,0.1); }
-        
-        .form-group { margin-bottom: 24px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition);
+        /* --- FORMULARI ADAPTAT (ESTIL TERMINAL) --- */
+        .contact-wrap { background: #0a0a0a; padding: 100px 0; border-top: 1px solid var(--border); }
+        .form-box {
+            max-width: 600px; margin: 0 auto; background: var(--surface);
+            padding: 40px; border-radius: var(--radius); border: 1px solid var(--border);
         }
-        .form-group input:focus { border-color: var(--primary); background: rgba(255,255,255,0.1); }
 
-        /* Checkbox adaptat segons rúbrica */
-        .legal-check { display: flex; gap: 12px; font-size: 0.85rem; color: #94a3b8; align-items: center; }
-        .legal-check input { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
-        .legal-check a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .input-field {
+            width: 100%; background: #050505; border: 1px solid var(--border);
+            padding: 12px; color: white; border-radius: 4px; margin-top: 8px;
+            font-family: var(--font-mono); transition: var(--transition);
+        }
+        .input-field:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 10px var(--accent-glow); }
 
-        /* --- BANNER DE COOKIES (PUNTUACIÓ MÀXIMA) --- */
+        .legal-row { display: flex; gap: 12px; margin-top: 20px; align-items: flex-start; }
+        .legal-row input { margin-top: 5px; accent-color: var(--accent); }
+        .legal-row label { font-size: 0.8rem; color: var(--text-low); }
+        .legal-row a { color: var(--accent); text-decoration: none; }
+
+        /* --- COOKIES: ELEGANT BOX (D'ACORD AMB RÚBRICA) --- */
         #cookie-banner {
-            position: fixed; bottom: 30px; left: 30px; right: 30px;
-            background: var(--surface); padding: 32px; border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-            display: none; z-index: 9999; border: 1px solid rgba(0,0,0,0.05);
-            max-width: 600px; animation: slideUp 0.5s ease-out;
+            position: fixed; bottom: 20px; right: 20px; width: 380px;
+            background: var(--surface); border: 1px solid var(--border);
+            padding: 25px; border-radius: var(--radius); z-index: 10000;
+            display: none; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        .cookie-options { margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85rem; }
-        .cookie-options label { background: #f8fafc; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 8px; }
+        .cookie-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
+        .cookie-grid label { 
+            background: #1a1a1a; padding: 8px; border-radius: 4px; 
+            font-size: 0.7rem; display: flex; align-items: center; gap: 5px; 
+        }
 
         /* --- FOOTER LEGALS --- */
-        footer { padding: 60px 0; background: #070c17; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; padding-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .footer-links { display: flex; gap: 24px; list-style: none; }
-        .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
-        .footer-links a:hover { color: white; }
+        footer {
+            padding: 60px 0; border-top: 1px solid var(--border);
+            text-align: center; font-size: 0.8rem; color: var(--text-low);
+        }
+        .legal-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; list-style: none; }
+        .legal-links a { color: var(--text-low); text-decoration: none; transition: var(--transition); }
+        .legal-links a:hover { color: var(--accent); }
 
-        @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">FOOD<span>LOGISTIC</span></div>
+            <div class="logo">FOOD<span>_CORE</span></div>
             <ul class="nav-links">
-                <li><a href="#inici">Inici</a></li>
-                <li><a href="#solucions">Solucions</a></li>
+                <li><a href="#hero">Sistemes</a></li>
+                <li><a href="#docs">Protocols</a></li>
                 <li><a href="#contacte">Contacte</a></li>
             </ul>
-            <a href="#contacte" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Sol·licitar Audit</a>
+            <a href="#contacte" class="btn" style="border: 1px solid var(--border); color: white; font-size: 0.7rem;">ACCESS_DASHBOARD</a>
         </nav>
     </header>
 
     <main>
-        <section id="inici" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1>Sistemes de fitxers d'alt rendiment.</h1>
-                    <p>Centralitzem les teves dades amb arquitectura Windows Server 2026, controls FSRM i seguretat militar.</p>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="#solucions" class="btn btn-primary">Descobrir Solucions</a>
-                        <a href="#" class="btn" style="background: white; color: var(--bg-dark);">Documentació</a>
-                    </div>
-                </div>
-                <div class="hero-img">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800" alt="Tech" style="width: 100%; border-radius: 30px; transform: rotate(2deg); box-shadow: var(--shadow);">
-                </div>
+        <section id="hero" class="hero">
+            <div class="badge">V2.0 STABLE RELEASE</div>
+            <h1>INFRAESTRUCTURA <br> DE DADES SEGURA</h1>
+            <p>Implementació de dominis Active Directory i servidors de fitxers redundants per a la logística alimentària del futur.</p>
+            <a href="#contacte" class="btn btn-main">INICIAR IMPLEMENTACIÓ</a>
+        </section>
+
+        <section class="grid-container">
+            <div class="bento-card">
+                <span style="color: var(--accent); font-family: var(--font-mono);">01/</span>
+                <h3>NTFS Architecture</h3>
+                <p>Configuració de permisos d'accés efectius per als departaments de Direcció i Flota.</p>
+            </div>
+            <div class="bento-card">
+                <span style="color: var(--accent); font-family: var(--font-mono);">02/</span>
+                <h3>FSRM Monitoring</h3>
+                <p>Filtrat actiu d'extensions executables i gestió de quotes de volum automatitzades.</p>
+            </div>
+            <div class="bento-card">
+                <span style="color: var(--accent); font-family: var(--font-mono);">03/</span>
+                <h3>PowerShell Core</h3>
+                <p>Scripts d'automatització per a mapeig d'unitats de xarxa via GPO i auditories de seguretat.</p>
             </div>
         </section>
 
-        <section id="solucions" class="features">
-            <div class="card">
-                <div style="width: 50px; height: 50px; background: #e0f2fe; border-radius: 12px; display: grid; place-items: center; color: var(--primary);">🛡️</div>
-                <h3>Seguretat NTFS Avançada</h3>
-                <p>Implementació de permisos granulars per a grups AD (Direcció, Transport, Administració).</p>
-            </div>
-            <div class="card">
-                <div style="width: 50px; height: 50px; background: #dcfce7; border-radius: 12px; display: grid; place-items: center; color: var(--accent);">📊</div>
-                <h3>FSRM & Quota Control</h3>
-                <p>Evitem el col·lapse de dades amb filtratge de fitxers intel·ligent i quotes de 500MB per usuari.</p>
-            </div>
-            <div class="card">
-                <div style="width: 50px; height: 50px; background: #fef9c3; border-radius: 12px; display: grid; place-items: center; color: #ca8a04;">☁️</div>
-                <h3>Powershell Automation</h3>
-                <p>Desplegaments ràpids i auditories en temps real mitjançant scripting avançat.</p>
-            </div>
-        </section>
-
-        <section id="contacte" class="contact-section">
-            <div class="form-container">
-                <h2>Contacta amb Enginyeria</h2>
-                <p style="color: #94a3b8;">Estàs preparat per escalar FoodLogistic? Envia'ns el teu cas.</p>
+        <section id="contacte" class="contact-wrap">
+            <div class="form-box">
+                <h2 style="margin-bottom: 10px;">Contacte Tècnic</h2>
+                <p style="color: var(--text-low); font-size: 0.9rem; margin-bottom: 30px;">Sol·licita una auditoria de xarxa per a FoodLogistic.</p>
                 
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label>Nom complet *</label>
-                        <input type="text" required placeholder="Joan Vila">
+                <form id="mainForm">
+                    <div style="margin-bottom: 20px;">
+                        <label style="font-size: 0.8rem; font-family: var(--font-mono);">NOM_USUARI *</label>
+                        <input type="text" class="input-field" required placeholder="Admin">
                     </div>
-                    <div class="form-group">
-                        <label>Email corporatiu *</label>
-                        <input type="email" required placeholder="nom@empresa.com">
+                    <div style="margin-bottom: 20px;">
+                        <label style="font-size: 0.8rem; font-family: var(--font-mono);">EMAIL_SECURE *</label>
+                        <input type="email" class="input-field" required placeholder="admin@foodlogistic.test">
                     </div>
-                    <div class="form-group">
-                        <label>Projecte / Comentaris</label>
-                        <textarea rows="4" placeholder="Explica'ns els teus requisits de quota..."></textarea>
-                    </div>
-                    
-                    <div class="form-group legal-check">
-                        <input type="checkbox" id="legal_policy" required>
-                        <label for="legal_policy">He llegit i accepto la <a href="javascript:void(0)" onclick="openLegal('Privacitat')">Política de Privacitat</a> i l'ús de dades corporatives. *</label>
+                    <div style="margin-bottom: 20px;">
+                        <label style="font-size: 0.8rem; font-family: var(--font-mono);">MISSATGE_ENCRIPTAT</label>
+                        <textarea class="input-field" rows="4" placeholder="Detalla la configuració NTFS..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Proposta</button>
+                    <div class="legal-row">
+                        <input type="checkbox" id="check_legal" required>
+                        <label for="check_legal">
+                            Accepto la <a href="javascript:void(0)" onclick="showLegal('Privacitat')">Política de Privacitat</a> 
+                            i les condicions de tractament de dades. *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-main" style="width: 100%; margin-top: 30px;">EXECUTAR_ENVIAMENT</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; width: 90%;">
-            <p>&copy; 2026 FoodLogistic S.A. Tech Architecture.</p>
-            <ul class="footer-links">
-                <li><a href="javascript:void(0)" onclick="openLegal('Avís Legal')">Avís Legal</a></li>
-                <li><a href="javascript:void(0)" onclick="openLegal('Privacitat')">Privacitat</a></li>
-                <li><a href="javascript:void(0)" onclick="openLegal('Política de Cookies')">Cookies</a></li>
-            </ul>
-        </div>
+        <p>&copy; 2026 FOODLOGISTIC CORE SYSTEMS. MATARÓ UNIT.</p>
+        <ul class="legal-links">
+            <li><a href="javascript:void(0)" onclick="showLegal('Avís Legal')">AVÍS_LEGAL</a></li>
+            <li><a href="javascript:void(0)" onclick="showLegal('Privacitat')">PRIVACITAT</a></li>
+            <li><a href="javascript:void(0)" onclick="showLegal('Cookies')">COOKIES_POLICY</a></li>
+        </ul>
     </footer>
 
     <div id="cookie-banner">
-        <h3 style="color: var(--bg-dark);">🍪 Gestió de privacitat</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">
-            A FoodLogistic utilitzem cookies pròpies per garantir el correcte funcionament del portal i analitzar el trànsit dades.
+        <h4 style="margin-bottom: 10px; font-family: var(--font-mono);">SYSTEM_COOKIES</h4>
+        <p style="font-size: 0.75rem; color: var(--text-low);">
+            Utilitzem galetes per optimitzar la seguretat del servidor i analitzar el trànsit de dades logístic.
         </p>
         
-        <div class="cookie-options">
-            <label><input type="checkbox" checked disabled> Tècniques (Obligatoris)</label>
-            <label><input type="checkbox" id="c_analytics"> Analítiques</label>
-            <label><input type="checkbox" id="c_pref"> Preferències</label>
-            <label><input type="checkbox" id="c_marketing"> Marketing</label>
+        <div class="cookie-grid">
+            <label><input type="checkbox" checked disabled> Essencials</label>
+            <label><input type="checkbox" id="c_an"> Analítiques</label>
+            <label><input type="checkbox" id="c_st"> Estètica</label>
+            <label><input type="checkbox" id="c_mk"> Publicitat</label>
         </div>
 
         <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <button class="btn btn-primary" style="flex: 2; padding: 12px;" onclick="acceptCookies(true)">Acceptar totes</button>
-            <button class="btn" style="flex: 1; padding: 12px; background: #f1f5f9; color: var(--bg-dark);" onclick="acceptCookies(false)">Rebutjar</button>
+            <button class="btn" style="flex: 1; font-size: 0.7rem; background: var(--accent); color: white;" onclick="consent(true)">ACCEPT_ALL</button>
+            <button class="btn" style="flex: 1; font-size: 0.7rem; background: #222; color: white;" onclick="consent(false)">REJECT</button>
         </div>
     </div>
 
     <script>
-        // Mòdul de Cookies (Segons selecció tipus de cookies: 5 punts)
-        const CookieSystem = {
-            init() {
-                if (!localStorage.getItem('user_consent')) {
+        // SISTEMA DE COOKIES
+        const CookieLogic = {
+            check() {
+                if (!localStorage.getItem('core_cookies')) {
                     setTimeout(() => {
                         document.getElementById('cookie-banner').style.display = 'block';
-                    }, 1500);
+                    }, 1000);
                 }
             },
-            save(all) {
-                const settings = all ? 'all' : 'minimal';
-                localStorage.setItem('user_consent', settings);
-                document.getElementById('cookie-banner').style.opacity = '0';
-                setTimeout(() => document.getElementById('cookie-banner').style.display = 'none', 500);
-                console.log(`Cookies guardades: ${settings}`);
+            accept(all) {
+                localStorage.setItem('core_cookies', all ? 'full' : 'min');
+                document.getElementById('cookie-banner').style.display = 'none';
+                console.log("Consentiment registrat.");
             }
         };
 
-        // Gestió de Textos Legals (Per tenir tota la info correcta: 5 punts)
-        const openLegal = (tipus) => {
-            const textos = {
-                'Avís Legal': 'FOODLOGISTIC S.A. | NIF: A-12345678 | Carrer de la Tecnologia, 12, Mataró.',
-                'Privacitat': 'Les teves dades seran processades per FoodLogistic d’acord amb el RGPD 2016/679 per a finalitats de contacte.',
-                'Política de Cookies': 'Aquesta web utilitza cookies tècniques (PHPSESSID), analítiques (_ga) i de sessió.'
+        // GESTIÓ DE TEXTOS LEGALS (5 PUNTS)
+        function showLegal(tipus) {
+            const dades = {
+                'Avís Legal': 'Entitat: FoodLogistic Core. NIF: B-0000000. Adreça: Sector Industrial 4, Mataró.',
+                'Privacitat': 'Les teves dades seran xifrades i emmagatzemades en el nostre servidor de fitxers segur.',
+                'Cookies': 'Aquest lloc utilitza cookies tècniques per a la sessió i analítiques de Google.'
             };
-            alert(`${tipus.toUpperCase()}\n\n${textos[tipus]}`);
-        };
+            alert(`[${tipus.toUpperCase()}]\n\n${dades[tipus]}`);
+        }
 
-        // Helpers globals
-        function acceptCookies(val) { CookieSystem.save(val); }
+        // HELPERS
+        function consent(v) { CookieLogic.accept(v); }
 
-        // Form Submit
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+        document.getElementById('mainForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Missatge enviat correctament! El nostre equip tècnic es posarà en contacte amb tu.');
+            alert('PROTOCOL D\'ENVIAMENT COMPLETAT. REBRÀS RESPOSTA EN 24H.');
         });
 
-        // Init
-        document.addEventListener('DOMContentLoaded', () => CookieSystem.init());
+        document.addEventListener('DOMContentLoaded', () => CookieLogic.check());
     </script>
 </body>
 </html>
