@@ -1,7 +1,7 @@
 ## 🔧 Solució realitzada
 
-- Repositori GitHub: https://github.com/el-teu-usuari/foodlogistic
-- Web publicada: https://el-teu-usuari.github.io/foodlogistic
+- Repositori GitHub: https://github.com/Cuencaferran/web-corporativa/tree/main
+- Web publicada: https://cuencaferran.github.io/web-corporativa/
 
 La web s'ha estructurat dins la carpeta `/docs` per permetre la publicació amb GitHub Pages.
 
