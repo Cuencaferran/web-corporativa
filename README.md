@@ -9,7 +9,7 @@ S'ha utilitzat GitHub Pages per a la publicació i StatCounter per al seguiment 
 
 ## Demostració
 
-[🌐 URL de la web](https://[usuari].github.io/[nom-del-repositori])
+[🌐 URL de la web]([(https://cuencaferran.github.io/web-corporativa/)])
 
 ## Tecnologies Utilitzades
 
