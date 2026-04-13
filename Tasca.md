@@ -35,7 +35,7 @@ Aquesta captura mostra la configuració de GitHub Pages, on es pot veure que la 
 
 ![foto](img_webcorporativa/5.png)
 
-Aquesta captura mostra la localització dels visitants segons StatCounter, on es pot observar que el 100% de les visites provenen d’Espanya, amb un total de 9 pàgines vistes.
+Aquesta captura mostra la localització dels visitants segons StatCounter, on es pot observar que el 100% de les visites provenen d’Espanya, amb un total de 2 pàgines vistes.
 
 ![foto](img_webcorporativa/6.png)
 
