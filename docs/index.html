@@ -2,39 +2,162 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <title>Política de Cookies - FoodLogístic S.A.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLogístic S.A. | Operació Escut Digital</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; padding: 40px; line-height: 1.6; color: #333; max-width: 800px; margin: auto; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .back-link { display: inline-block; margin-top: 30px; color: #27ae60; text-decoration: none; font-weight: bold; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --light: #f4f7f6;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        
+        /* Capçalera i Hero */
+        header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; border-bottom: 4px solid var(--accent); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); 
+                height: 350px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; flex-direction: column; }
+        .hero h2 { font-size: 2.5rem; margin: 0; }
+
+        .container { max-width: 1000px; margin: auto; padding: 2rem; }
+
+        /* SECCIÓ QUI SOM */
+        .about { background: var(--white); padding: 3rem 0; text-align: center; }
+        .about h2 { color: var(--primary); position: relative; padding-bottom: 10px; }
+        .about h2::after { content: ''; width: 60px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .about p { max-width: 800px; margin: 20px auto; font-size: 1.1rem; color: #555; }
+
+        /* SECCIÓ SERVEIS */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .service-card { background: var(--light); padding: 2rem; border-radius: 10px; border-top: 5px solid var(--accent); box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { color: var(--primary); margin-top: 0; }
+        .service-card p { font-size: 0.95rem; color: #666; }
+
+        /* FORMULARI LEGALITZAT (T06) */
+        .contact-form { background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .contact-form h2 { margin-top: 0; color: var(--primary); text-align: center; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        
+        .legal-group { margin: 20px 0; }
+        .checkbox-container { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 0.85rem; cursor: pointer; }
+        .checkbox-container input { width: 18px; height: 18px; margin: 0; cursor: pointer; }
+        
+        button { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; width: 100%; font-weight: bold; transition: background 0.3s; }
+        button:hover { background: #219150; }
+
+        /* BANNER DE COOKIES */
+        #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(26, 26, 26, 0.98); color: white; padding: 25px; display: none; flex-direction: column; align-items: center; z-index: 9999; box-sizing: border-box; border-top: 3px solid var(--accent); }
+        .cookie-buttons { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .btn-cookie { padding: 10px 25px; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; font-size: 0.9rem; }
+        .btn-accept { background: var(--accent); color: white; }
+        .btn-reject { background: #e74c3c; color: white; }
+        .btn-settings { background: #555; color: white; }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: #bdc3c7; text-align: center; padding: 3rem 1rem; margin-top: 4rem; }
+        .legal-links { margin-top: 1.5rem; border-top: 1px solid #444; padding-top: 1.5rem; }
+        .legal-links a { color: #27ae60; margin: 0 15px; text-decoration: none; font-size: 0.9rem; }
+        .legal-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>Política de Cookies</h1>
-    <p>Aquest lloc web utilitza cookies per millorar la teva navegació. Aquí tens la taula de cookies que fem servir:</p>
-    
-    <table>
-        <tr>
-            <th>Tipus</th>
-            <th>Finalitat</th>
-            <th>Durada</th>
-        </tr>
-        <tr>
-            <td>Tècniques</td>
-            <td>Controlar l'acceptació del banner legal.</td>
-            <td>1 any</td>
-        </tr>
-        <tr>
-            <td>Analítiques</td>
-            <td>Statcounter: mesurar visites de forma anònima.</td>
-            <td>Sessió</td>
-        </tr>
-    </table>
 
-    <p>Pots desactivar les cookies des de la configuració del teu navegador (Chrome, Safari, Firefox).</p>
-    <a href="index.html" class="back-link">← Tornar a la web principal</a>
+    <header>
+        <h1>FoodLogístic S.A.</h1>
+        <p>Especialistes en la cadena de fred i logística d'última milla</p>
+    </header>
+
+    <section class="hero">
+        <h2>Connectem el camp amb la teva taula</h2>
+        <p>Eficiència, seguretat alimentària i tecnologia al teu servei.</p>
+    </section>
+
+    <div class="container">
+        
+        <section class="about">
+            <h2>Sobre Nosaltres</h2>
+            <p>A <strong>FoodLogístic S.A.</strong>, portem més de 20 anys liderant el sector de la distribució alimentària a la zona de Mataró i el Maresme. El nostre compromís és garantir la màxima frescor dels productes mitjançant un control rigorós de la temperatura i rutes optimitzades per reduir l'impacte ambiental.</p>
+        </section>
+
+        <section class="services">
+            <div class="service-card">
+                <h3>Transport Refrigerat</h3>
+                <p>Flota de camions d'última generació amb control tèrmic digital 24/7 per garantir que la cadena de fred no es trenqui mai.</p>
+            </div>
+            <div class="service-card">
+                <h3>Emmagatzematge Intel·ligent</h3>
+                <p>Disposem de més de 5.000m² de cambres frigorífiques automatitzades per a una gestió d'estoc precisa i segura.</p>
+            </div>
+            <div class="service-card">
+                <h3>Distribució Capil·lar</h3>
+                <p>Arribem a qualsevol punt de la ciutat de forma àgil, especialitzats en el subministrament a canal HORECA i supermercats.</p>
+            </div>
+        </section>
+
+        <section class="contact-form" id="contacte">
+            <h2>Contacta amb nosaltres</h2>
+            <form action="#" method="POST">
+                <input type="text" name="nom" placeholder="Nom complet" required>
+                <input type="email" name="email" placeholder="Correu electrònic" required>
+                <input type="tel" name="telefon" placeholder="Telèfon de contacte" required>
+                <textarea name="missatge" rows="4" placeholder="En què us podem ajudar?"></textarea>
+                
+                <div class="legal-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <span>He llegit i accepto la <a href="privacitat.html" target="_blank" style="color: var(--accent);">Política de Privacitat</a>. Entenc que les meves dades seran tractades per gestionar la meva sol·licitud.</span>
+                    </label>
+
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="marketing" name="marketing">
+                        <span>Autoritzo l'enviament de comunicacions comercials, ofertes i novetats de FoodLogístic S.A. segons l' <a href="avis-legal.html" target="_blank" style="color: var(--accent);">Avís Legal</a>.</span>
+                    </label>
+                </div>
+                
+                <button type="submit">Enviar Sol·licitud</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>FoodLogístic S.A.</strong> - Polígon Industrial Mataró<br>Telèfon: 93 755 00 00 | Email: info@foodlogistic.cat</p>
+        <div class="legal-links">
+            <a href="avis-legal.html">Avís Legal</a>
+            <a href="privacitat.html">Política de Privacitat</a>
+            <a href="cookies.html">Política de Cookies</a>
+        </div>
+        <p style="font-size: 0.7rem; margin-top: 20px; opacity: 0.6;">&copy; 2024 Tots els drets reservats.</p>
+    </footer>
+
+    <div id="cookie-banner">
+        <p>Aquesta web utilitza cookies pròpies i de tercers per analitzar el trànsit i millorar la teva experiència. 
+           Pots acceptar-les totes o configurar-les a la nostra <a href="cookies.html" style="color: var(--accent);">pàgina de cookies</a>.</p>
+        <div class="cookie-buttons">
+            <button class="btn-cookie btn-accept" onclick="acceptCookies()">Acceptar totes</button>
+            <button class="btn-cookie btn-reject" onclick="rejectCookies()">Rebutjar</button>
+            <button class="btn-cookie btn-settings" onclick="location.href='cookies.html'">Configurar</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            if (!localStorage.getItem('foodlogistic-cookies')) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('foodlogistic-cookies', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('foodlogistic-cookies', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
+
 </body>
 </html>
