@@ -3,111 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodLogístic S.A. | Legal Compliance</title>
+    <title>FoodLogístic S.A. | Operació Escut Digital</title>
     <style>
         :root {
             --primary: #2c3e50;
             --accent: #27ae60;
             --light: #ecf0f1;
-            --dark: #222;
+            --dark: #1a1a1a;
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; line-height: 1.6; }
         
-        header { background: var(--primary); color: white; padding: 1rem; text-align: center; }
+        /* Disseny General */
+        header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; }
         .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); 
                 height: 300px; background-size: cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; flex-direction: column; }
         
-        .container { max-width: 1000px; margin: auto; padding: 2rem; }
+        .container { max-width: 900px; margin: auto; padding: 2rem; }
 
-        /* FORMULARI LEGALITZAT */
-        .contact-form { background: var(--light); padding: 2rem; border-radius: 8px; margin-top: 3rem; border: 1px solid #ddd; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        /* FORMULARI LEGALITZAT (T06) */
+        .contact-form { background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .contact-form h2 { margin-top: 0; color: var(--primary); }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
         
-        .legal-check { display: flex; align-items: flex-start; gap: 10px; margin: 15px 0; font-size: 0.85rem; }
-        .legal-check input { width: auto; margin-top: 4px; cursor: pointer; }
+        /* Estil per a les caselles de selecció (Checkboxes) */
+        .legal-group { margin: 20px 0; }
+        .checkbox-container { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 0.9rem; cursor: pointer; }
+        .checkbox-container input { width: 18px; height: 18px; margin: 0; cursor: pointer; }
         
-        button { background: var(--accent); color: white; border: none; padding: 12px 25px; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%; }
+        button { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; width: 100%; font-weight: bold; transition: background 0.3s; }
+        button:hover { background: #219150; }
 
-        /* BANNER DE COOKIES REIAL */
-        #cookie-banner { position: fixed; bottom: 0; width: 100%; background: rgba(44, 62, 80, 0.98); color: white; padding: 20px; display: none; flex-direction: column; align-items: center; z-index: 1000; box-sizing: border-box; text-align: center; }
-        .cookie-buttons { margin-top: 15px; }
-        .btn-cookie { padding: 10px 20px; margin: 5px; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; }
+        /* BANNER DE COOKIES (T06) */
+        #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(26, 26, 26, 0.98); color: white; padding: 25px; display: none; flex-direction: column; align-items: center; z-index: 9999; box-sizing: border-box; border-top: 3px solid var(--accent); }
+        .cookie-buttons { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .btn-cookie { padding: 10px 25px; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; font-size: 0.9rem; }
         .btn-accept { background: var(--accent); color: white; }
         .btn-reject { background: #e74c3c; color: white; }
+        .btn-settings { background: #555; color: white; }
 
-        footer { background: var(--dark); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
-        .legal-links a { color: #bbb; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
+        /* FOOTER AMB LINKS REALS */
+        footer { background: var(--dark); color: #bdc3c7; text-align: center; padding: 3rem 1rem; margin-top: 4rem; }
+        .legal-links { margin-top: 1.5rem; border-top: 1px solid #444; padding-top: 1.5rem; }
+        .legal-links a { color: #27ae60; margin: 0 15px; text-decoration: none; font-size: 0.9rem; }
+        .legal-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>FoodLogístic S.A.</h1>
-        <p>Operació Escut Digital: 100% Legal</p>
+        <p>Solucions logístiques amb total garantia legal</p>
     </header>
 
     <section class="hero">
-        <h2>Logística Segura i Transparent</h2>
+        <h2>Operació Escut Digital</h2>
+        <p>La teva confiança, la nostra prioritat legal.</p>
     </section>
 
     <div class="container">
-        <section class="contact-form">
-            <h2>Contacta amb nosaltres</h2>
-            <form action="#">
-                <input type="text" placeholder="Nom complet" required>
-                <input type="email" placeholder="Correu electrònic" required>
-                <input type="tel" placeholder="Telèfon (Ex: +34 600 000 000)" required>
-                <textarea rows="4" placeholder="Missatge"></textarea>
+        <section class="contact-form" id="contacte">
+            <h2>Formulari de Contacte Oficial</h2>
+            <form action="#" method="POST">
+                <input type="text" name="nom" placeholder="Nom complet" required>
+                <input type="email" name="email" placeholder="Correu electrònic" required>
+                <input type="tel" name="telefon" placeholder="Telèfon (Obligatori per T06)" required>
+                <textarea name="missatge" rows="4" placeholder="Explica'ns què necessites..."></textarea>
                 
-                <div class="legal-check">
-                    <input type="checkbox" id="privacy" required>
-                    <label for="privacy">Accepto la <a href="privacitat.html">Política de Privacitat</a>. Entenc com es tractaran les meves dades segons els drets ARSLOP. (Obligatori)</label>
-                </div>
+                <div class="legal-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <span>He llegit i accepto la <a href="privacitat.html" target="_blank" style="color: var(--accent);">Política de Privacitat</a>. Les dades seran tractades per gestionar la sol·licitud segons el RGPD.</span>
+                    </label>
 
-                <div class="legal-check">
-                    <input type="checkbox" id="comunicacions">
-                    <label for="comunicacions">Desitjo rebre comunicacions comercials i promocions de FoodLogístic S.A. segons l' <a href="avis-legal.html">Avís Legal</a>.</label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="marketing" name="marketing">
+                        <span>Autoritzo l'enviament de comunicacions comercials i novetats segons s'indica a l' <a href="avis-legal.html" target="_blank" style="color: var(--accent);">Avís Legal</a>.</span>
+                    </label>
                 </div>
                 
-                <button type="submit">Enviar Dades</button>
+                <button type="submit">Enviar Sol·licitud Legal</button>
             </form>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 FoodLogístic S.A. - Mataró</p>
+        <p>&copy; 2024 FoodLogístic S.A. - Polígon Industrial Mataró</p>
         <div class="legal-links">
-            <a href="avis-legal.html">Avís Legal</a> | 
-            <a href="privacitat.html">Política de Privacitat</a> | 
+            <a href="avis-legal.html">Avís Legal</a>
+            <a href="privacitat.html">Política de Privacitat</a>
             <a href="cookies.html">Política de Cookies</a>
         </div>
     </footer>
 
     <div id="cookie-banner">
-        <p>Aquest lloc web utilitza cookies per millorar l'experiència. Pots acceptar-les, rebutjar-les o configurar-les. 
-           Consulta la nostra <a href="cookies.html" style="color: #5dade2;">Política de Cookies</a>.</p>
+        <p>Aquesta web utilitza cookies pròpies i de tercers per analitzar el trànsit i millorar la teva experiència. 
+           Pots acceptar-les totes o configurar-les a la nostra <a href="cookies.html" style="color: var(--accent);">pàgina de cookies</a>.</p>
         <div class="cookie-buttons">
-            <button class="btn-cookie btn-accept" onclick="handleCookies('accept')">Acceptar totes</button>
-            <button class="btn-cookie btn-reject" onclick="handleCookies('reject')">Rebutjar</button>
+            <button class="btn-cookie btn-accept" onclick="acceptCookies()">Acceptar totes</button>
+            <button class="btn-cookie btn-reject" onclick="rejectCookies()">Rebutjar</button>
+            <button class="btn-cookie btn-settings" onclick="location.href='cookies.html'">Configurar</button>
         </div>
     </div>
 
     <script>
-        // Lògica per mostrar/amagar banner
+        // Lògica per mostrar el banner si no hi ha preferència guardada
         window.onload = function() {
-            if (!localStorage.getItem('cookies-preference')) {
+            if (!localStorage.getItem('foodlogistic-cookies')) {
                 document.getElementById('cookie-banner').style.display = 'flex';
             }
         }
 
-        function handleCookies(choice) {
-            localStorage.setItem('cookies-preference', choice);
+        function acceptCookies() {
+            localStorage.setItem('foodlogistic-cookies', 'accepted');
             document.getElementById('cookie-banner').style.display = 'none';
-            if(choice === 'accept') {
-                console.log("Cookies acceptades. Activant Statcounter...");
-                // Aquí s'activarien els scripts de seguiment
-            }
+            alert("Has acceptat les cookies. Ara s'activarà el seguiment analític.");
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('foodlogistic-cookies', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+            alert("Has rebutjat les cookies no essencials.");
         }
     </script>
+
 </body>
 </html>
