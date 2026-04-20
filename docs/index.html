@@ -3,90 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodLogístic S.A. | Serveis Logístics</title>
+    <title>FoodLogístic S.A. | Serveis de Logística Alimentària</title>
     <style>
-        :root { --primary: #2c3e50; --accent: #27ae60; --light: #f4f7f6; --dark: #1a1a1a; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --light: #f4f7f6;
+            --dark: #1a1a1a;
+        }
+
         body { font-family: 'Segoe UI', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+
+        /* Capçalera */
         header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; border-bottom: 4px solid var(--accent); }
+        
+        /* Hero */
         .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); 
                 height: 300px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; flex-direction: column; }
+        .hero h2 { font-size: 2.2rem; margin: 0; }
+
         .container { max-width: 1000px; margin: auto; padding: 2rem; }
-        .section-title { color: var(--primary); text-align: center; margin-top: 2rem; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
-        .service-card { background: var(--light); padding: 1.5rem; border-radius: 10px; border-top: 5px solid var(--accent); text-align: center; }
-        .contact-form { background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 3rem; }
+
+        /* Secció Qui Som */
+        .about { text-align: center; margin-bottom: 3rem; }
+        .about h2 { color: var(--primary); }
+        .about p { font-size: 1.1rem; color: #555; }
+
+        /* Secció Serveis */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+        .service-card { background: var(--light); padding: 1.5rem; border-radius: 10px; border-left: 5px solid var(--accent); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .service-card h3 { color: var(--primary); margin-top: 0; }
+
+        /* Formulari Legalitzat T06 */
+        .contact-form { background: #eee; padding: 2.5rem; border-radius: 12px; margin-top: 3rem; }
+        .contact-form h2 { margin-top: 0; color: var(--primary); }
         input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        
         .legal-check { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; margin: 15px 0; }
-        button { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
-        footer { background: var(--dark); color: #bdc3c7; text-align: center; padding: 2rem; margin-top: 3rem; }
-        .legal-links a { color: var(--accent); margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
-        #cookie-banner { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.9); color: white; padding: 20px; display: none; text-align: center; z-index: 1000; }
+        .legal-check input { width: 18px; height: 18px; cursor: pointer; }
+        
+        button.send-btn { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; font-size: 1rem; }
+
+        /* EL BANNER DE COOKIES (Ara és una barra discreta a sota) */
+        #cookie-banner { 
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            background: rgba(26, 26, 26, 0.95); 
+            color: white; 
+            padding: 15px 20px; 
+            display: none; /* S'activa amb JS */
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px;
+            z-index: 1000;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+        }
+        .btn-cookie { padding: 8px 15px; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; }
+        .btn-accept { background: var(--accent); color: white; }
+        .btn-reject { background: #e74c3c; color: white; }
+
+        footer { background: var(--dark); color: #bdc3c7; text-align: center; padding: 2rem; margin-top: 4rem; }
+        .legal-links a { color: var(--accent); margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>FoodLogístic S.A.</h1>
-        <p>Logística d'aliments a Mataró</p>
+        <p>Excel·lència en logística i transport alimentari</p>
     </header>
 
     <section class="hero">
-        <h2>Experts en la Cadena de Fred</h2>
-        <p>Garantim la màxima frescor des de l'origen fins al destí.</p>
+        <h2>Operació Escut Digital</h2>
+        <p>Seguretat alimentària i legalitat al 100%</p>
     </section>
 
     <div class="container">
-        <h2 class="section-title">La nostra Empresa</h2>
-        <p style="text-align: center;">Som una empresa familiar amb seu a Mataró especialitzada en el transport i emmagatzematge de productes alimentaris. Utilitzem tecnologia d'última generació per controlar la temperatura en temps real.</p>
+        <section class="about">
+            <h2>Líders a Mataró i el Maresme</h2>
+            <p>FoodLogístic S.A. és una empresa dedicada al transport i emmagatzematge de productes alimentaris sota els estàndards més exigents. La nostra missió és garantir que la cadena de fred es mantingui intacta des del productor fins al punt de venda final.</p>
+        </section>
 
-        <h2 class="section-title">Els nostres Serveis</h2>
         <div class="services">
             <div class="service-card">
                 <h3>Transport Refrigerat</h3>
-                <p>Flota moderna per a transport de congelats i productes frescos.</p>
+                <p>Flota pròpia amb control de temperatura constant per a productes frescos i congelats.</p>
             </div>
             <div class="service-card">
-                <h3>Emmagatzematge</h3>
-                <p>Cambres frigorífiques intel·ligents al Maresme.</p>
+                <h3>Emmagatzematge 4.0</h3>
+                <p>Cambres frigorífiques intel·ligents amb gestió d'estoc automatitzada i traçabilitat total.</p>
             </div>
             <div class="service-card">
-                <h3>Distribució</h3>
-                <p>Repartiment diari a supermercats i restaurants.</p>
+                <h3>Última Milla</h3>
+                <p>Distribució ràpida i eficient a restaurants, hotels i supermercats de tota la província.</p>
             </div>
         </div>
 
         <section class="contact-form">
-            <h2>Contacte</h2>
-            <form>
+            <h2>Contacte Oficial</h2>
+            <form action="#">
                 <input type="text" placeholder="Nom complet" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Telèfon obligatori" required>
-                <textarea rows="4" placeholder="Missatge"></textarea>
+                <input type="email" placeholder="Email de contacte" required>
+                <input type="tel" placeholder="Telèfon (Requisit T06)" required>
+                <textarea rows="4" placeholder="Com us podem ajudar?"></textarea>
+                
                 <div class="legal-check">
-                    <input type="checkbox" required>
-                    <label>Accepto la <a href="privacitat.html">Política de Privacitat</a> (Drets ARSLOP).</label>
+                    <input type="checkbox" id="c1" required>
+                    <label for="c1">Accepto la <a href="privacitat.html" style="color:var(--accent)">Política de Privacitat</a> i el tractament de dades (ARSLOP).</label>
                 </div>
-                <button type="submit">Enviar</button>
+                <div class="legal-check">
+                    <input type="checkbox" id="c2">
+                    <label for="c2">Vull rebre informació comercial segons l' <a href="avis-legal.html" style="color:var(--accent)">Avís Legal</a>.</label>
+                </div>
+                
+                <button type="submit" class="send-btn">Enviar Dades</button>
             </form>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 FoodLogístic S.A.</p>
+        <p>&copy; 2024 FoodLogístic S.A. - Mataró</p>
         <div class="legal-links">
             <a href="avis-legal.html">Avís Legal</a> | 
-            <a href="privacitat.html">Privacitat</a> | 
-            <a href="cookies.html">Cookies</a>
+            <a href="privacitat.html">Política de Privacitat</a> | 
+            <a href="cookies.html">Política de Cookies</a>
         </div>
     </footer>
 
     <div id="cookie-banner">
-        <p>Aquest web fa servir cookies. <button onclick="accept()">Acceptar</button></p>
+        <span>Aquesta web utilitza cookies per millorar l'experiència.</span>
+        <div>
+            <button class="btn-cookie btn-accept" onclick="closeCookies()">Acceptar</button>
+            <button class="btn-cookie btn-reject" onclick="closeCookies()">Rebutjar</button>
+        </div>
     </div>
 
     <script>
-        if(!localStorage.getItem('ok')) document.getElementById('cookie-banner').style.display='block';
-        function accept(){ localStorage.setItem('ok','1'); document.getElementById('cookie-banner').style.display='none'; }
+        // El banner només surt si no han acceptat abans i NO tapa la web
+        window.onload = function() {
+            if (!localStorage.getItem('cookies_accepted')) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        }
+
+        function closeCookies() {
+            localStorage.setItem('cookies_accepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
     </script>
+
 </body>
 </html>
